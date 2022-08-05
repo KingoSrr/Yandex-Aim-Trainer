@@ -12,7 +12,11 @@ public class SpawnTargetController : MonoBehaviour
 
     void Start()
     {
-        for (int i = 0; i < 15; i++)
+        Spawn();
+    }
+    void Spawn()
+    {
+        for (int i = 0; i < 5; i++)
         {
             posX = 2f;
             posY = Random.Range(-0.4f, 0.4f);
@@ -23,5 +27,16 @@ public class SpawnTargetController : MonoBehaviour
             go.transform.SetParent(targetPlace.transform);
             go.transform.localPosition = new Vector3(posX, posY, posZ);
         }
+    }
+    public void Respawn()
+    {
+        posX = 2f;
+        posY = Random.Range(-0.3f, 0.3f);
+        posZ = Random.Range(-0.3f, 0.3f);
+
+        GameObject go = Instantiate(target);
+
+        go.transform.SetParent(targetPlace.transform);
+        go.transform.localPosition = new Vector3(posX, posY, posZ);
     }
 }

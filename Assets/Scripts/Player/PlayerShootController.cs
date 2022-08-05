@@ -5,7 +5,16 @@ using UnityEngine;
 public class PlayerShootController : MonoBehaviour
 {
     [SerializeField] private Camera _playerCamera;
+    [SerializeField] private GameObject spawnTargetController;
+    void Start()
+    {
+        spawnTargetController = GameObject.FindGameObjectWithTag("SpawnTargetController");
+    }
     void Update()
+    {
+        Shoot();
+    }
+    void Shoot()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
@@ -14,7 +23,8 @@ public class PlayerShootController : MonoBehaviour
             RaycastHit hit; // Сохранить первую информацию о столкновении
             if (Physics.Raycast(ray, out hit) && hit.collider.CompareTag("Target"))
             {
-                Debug.Log("Hit" + hit.point);
+                Destroy(hit.collider.gameObject);
+                spawnTargetController.GetComponent<SpawnTargetController>().Respawn();
             }
         }
     }

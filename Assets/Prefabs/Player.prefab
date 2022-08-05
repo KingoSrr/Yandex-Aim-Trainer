@@ -136,6 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerCamera: {fileID: 2831555944618389556}
+  spawnTargetController: {fileID: 0}
 --- !u!1 &5969344102721188606
 GameObject:
   m_ObjectHideFlags: 0
