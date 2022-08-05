@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 2321186906441415222}
   - component: {fileID: 2321186906441415225}
   - component: {fileID: 4108418706649086118}
+  - component: {fileID: 3610968874468475866}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2321186906441415219}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.0000009536743, y: 1, z: 6.000001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -118,7 +119,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 12
-  _jumpSpeed: 8
   _gravity: 20
   _sensetivity: 4
   _rotationX: 0
@@ -136,7 +136,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerCamera: {fileID: 2831555944618389556}
-  spawnTargetController: {fileID: 0}
+  _spawnTargetController: {fileID: 0}
+  _uiController: {fileID: 0}
+--- !u!114 &3610968874468475866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2321186906441415219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aa8f2dfdc697d64ba93cc444d4cae1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameController: {fileID: 0}
 --- !u!1 &5969344102721188606
 GameObject:
   m_ObjectHideFlags: 0

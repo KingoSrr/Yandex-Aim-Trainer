@@ -1,9 +1,13 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-    [SerializeField] private GameObject _player;
-    [SerializeField] private GameObject _spawnPoint;
+    [SerializeField] private GameObject _playerPrefab;
+    public GameObject firstSpawnPoint;
+    public GameObject secondSpawnPoint;
+    public GameObject thridSpawnPoint;
+    public static int asf;
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -11,6 +15,10 @@ public class GameController : MonoBehaviour
     }
     void SpawnPlayer()
     {
-        GameObject player = Instantiate(_player, _spawnPoint.transform.position, Quaternion.identity);
+        Instantiate(_playerPrefab, firstSpawnPoint.transform.position, Quaternion.identity);
+    }
+    public void RestartScene()
+    {
+        SceneManager.LoadScene("GameScene");
     }
 }
