@@ -5,10 +5,12 @@ using UnityEngine;
 public class PlayerShootController : MonoBehaviour
 {
     [SerializeField] private Camera _playerCamera;
-    [SerializeField] private GameObject spawnTargetController;
+    [SerializeField] private GameObject _spawnTargetController;
+    [SerializeField] private GameObject _uiController;
     void Start()
     {
-        spawnTargetController = GameObject.FindGameObjectWithTag("SpawnTargetController");
+        _spawnTargetController = GameObject.FindGameObjectWithTag("SpawnTargetController");
+        _uiController = GameObject.FindGameObjectWithTag("UIController");
     }
     void Update()
     {
@@ -24,7 +26,8 @@ public class PlayerShootController : MonoBehaviour
             if (Physics.Raycast(ray, out hit) && hit.collider.CompareTag("Target"))
             {
                 Destroy(hit.collider.gameObject);
-                spawnTargetController.GetComponent<SpawnTargetController>().Respawn();
+                _spawnTargetController.GetComponent<SpawnTargetController>().Respawn();
+                _uiController.GetComponent<UIController>().score++;
             }
         }
     }
