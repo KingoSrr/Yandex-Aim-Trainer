@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
     public static int asf;
     void Start()
     {
+        Time.timeScale = 1;
         Cursor.lockState = CursorLockMode.Locked;
         SpawnPlayer();
     }

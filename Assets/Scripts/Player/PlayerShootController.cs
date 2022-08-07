@@ -27,7 +27,7 @@ public class PlayerShootController : MonoBehaviour
             {
                 Destroy(hit.collider.gameObject);
                 _spawnTargetController.GetComponent<SpawnTargetController>().Respawn();
-                _uiController.GetComponent<UIController>().score++;
+                _uiController.GetComponent<UIGameController>().score++;
             }
         }
     }
