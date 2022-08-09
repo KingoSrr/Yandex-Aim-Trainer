@@ -13,7 +13,7 @@ public class UIGameController : MonoBehaviour
     void Start()
     {
         _gameController = GameObject.FindGameObjectWithTag("GameController");
-        _seconds = 60;
+        _seconds = 6;///////////////
     }
     void Update()
     {
@@ -31,6 +31,7 @@ public class UIGameController : MonoBehaviour
         {
             Time.timeScale = 0;
             Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             _gameOverPanel.SetActive(true);
         }
 

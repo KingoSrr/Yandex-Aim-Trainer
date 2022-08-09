@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour
     {
         Time.timeScale = 1;
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         SpawnPlayer();
     }
     void SpawnPlayer()
