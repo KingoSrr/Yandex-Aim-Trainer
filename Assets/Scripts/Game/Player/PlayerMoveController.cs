@@ -6,17 +6,19 @@ public class PlayerMoveController : MonoBehaviour
     [SerializeField] private float _speed = 12f;
     [SerializeField] private float _gravity = 20f;
     //параметры поворота
-    [SerializeField] private float _sensetivity = 4f;
+    [SerializeField] private float _sensetivity;
     [SerializeField] private float _rotationX = 0f;
     [SerializeField] private float _rotationY = 0f;
 
     Vector3 moveDirection = Vector3.zero;
     CharacterController controller;
     Camera playerCamera;
+    [SerializeField] private UIMenuContoller _uiMenuController;
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        _sensetivity = PlayerPrefs.GetFloat("sensetivitySave");
         playerCamera = transform.Find("PlayerCamera").GetComponent<Camera>();
     }
     void FixedUpdate()

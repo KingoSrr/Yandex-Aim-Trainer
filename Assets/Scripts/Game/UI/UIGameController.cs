@@ -13,7 +13,7 @@ public class UIGameController : MonoBehaviour
     void Start()
     {
         _gameController = GameObject.FindGameObjectWithTag("GameController");
-        _seconds = 6;///////////////
+        _seconds = 60;
     }
     void Update()
     {

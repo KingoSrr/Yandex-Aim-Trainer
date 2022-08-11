@@ -7,13 +7,19 @@ public class GameController : MonoBehaviour
     public GameObject firstSpawnPoint;
     public GameObject secondSpawnPoint;
     public GameObject thridSpawnPoint;
-    public static int asf;
     void Start()
     {
         Time.timeScale = 1;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         SpawnPlayer();
+    }
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("MenuScene");
+        }
     }
     void SpawnPlayer()
     {
